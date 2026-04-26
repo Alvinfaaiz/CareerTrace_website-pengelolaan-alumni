@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class JobExperience {
+public class JobExperience implements generateID {
     private String idJobExperience;
     private Industri industri;
     private String jabatan;
@@ -8,10 +8,15 @@ public class JobExperience {
     private Date startDate;
     private Date endDate;
 
-     public JobExperience(String idJobExperience, Industri industri,
+    @Override
+    public String generateID() {
+        return "JOB-" + System.currentTimeMillis();
+    }
+
+    public JobExperience(String idJobExperience, Industri industri,
                          String jabatan, Company company,
                          Date startDate, Date endDate) {
-        this.idJobExperience = idJobExperience;
+        this.idJobExperience = generateID();
         this.industri = industri;
         this.jabatan = jabatan;
         this.company = company;

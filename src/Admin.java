@@ -43,24 +43,12 @@ public class Admin extends User {
         System.out.println("Alumni " + alumni.getName() + " berhasil diverifikasi.");
     }
 
-    // Fitur 1: cari alumni by nama via interface Searching
-    public void cariAlumniByNama(String keyword) {
-        System.out.println("=== Hasil Pencarian: \"" + keyword + "\" ===");
-        boolean ada = false;
-        for (int i = 0; i < jumlahAlumni; i++) {
-            if (daftarAlumni[i] == null) continue;
-            daftarAlumni[i].cekKeyword(keyword); // panggil interface
-            if (daftarAlumni[i].getName().toLowerCase()
-                    .contains(keyword.toLowerCase())) {
-                daftarAlumni[i].getProfile();
-                daftarAlumni[i].displayJobExperience();
-                System.out.println("------------------------");
-                ada = true;
-            }
-        }
-        if (!ada) System.out.println("Tidak ada alumni dengan nama tersebut.");
-    }
 
-    public Alumni[] getDaftarAlumni() { return daftarAlumni; }
-    public int getJumlahAlumni() { return jumlahAlumni; }
+    public Alumni[] getDaftarAlumni() { 
+        return daftarAlumni;
+    }
+    
+    public int getJumlahAlumni() {
+        return jumlahAlumni;
+    }
 }
